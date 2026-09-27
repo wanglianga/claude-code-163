@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: manhole-platform
+  datasource:
+    url: jdbc:postgresql://localhost:5433/manhole
+    username: manhole_app
+    password: manhole123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 30MB
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+  web:
+    resources:
+      add-mappings: true
+
+app:
+  upload-dir: uploads
+  # 应急处置到场时效 SLA（分钟）
+  emergency-sla-minutes: 120
+  # 维修时长 SLA（小时）
+  repair-sla-hours: 48
